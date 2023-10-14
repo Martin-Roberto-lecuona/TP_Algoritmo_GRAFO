@@ -75,11 +75,14 @@ public class Mapa {
 				calcularPesoVecinos(destino, vecinos, abierto, act);
 
 			} catch (NoSuchElementException e) {
-				if (cerrado.isEmpty())
-					return cerrado;// se quedo sin salida y no hay solucion
+				if (cerrado.isEmpty()) {
+					return sinSalida;// se quedo sin salida y no hay solucion
+				}
 				sinSalida.add(cerrado.remove(cerrado.size() - 1));
+				if (cerrado.isEmpty()) {
+					return sinSalida;// se quedo sin salida y no hay solucion
+				}
 				vecinos = getVecinos(cerrado.get(cerrado.size() - 1), cerrado, destino, sinSalida);
-				System.out.println("act: " + act);
 			}
 		}
 
