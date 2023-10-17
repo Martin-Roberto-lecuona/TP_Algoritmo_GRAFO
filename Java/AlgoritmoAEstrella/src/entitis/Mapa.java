@@ -84,6 +84,7 @@ public class Mapa {
 				}
 				vecinos = getVecinos(cerrado.get(cerrado.size() - 1), cerrado, destino, sinSalida);
 			}
+			printCamino(cerrado);
 		}
 
 		ArrayList<Casilla> camino = new ArrayList<Casilla>();
