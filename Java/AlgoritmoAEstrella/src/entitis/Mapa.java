@@ -84,7 +84,7 @@ public class Mapa {
 				}
 				vecinos = getVecinos(cerrado.get(cerrado.size() - 1), cerrado, destino, sinSalida);
 			}
-			printCamino(cerrado);
+			
 		}
 
 		ArrayList<Casilla> camino = new ArrayList<Casilla>();
@@ -145,8 +145,8 @@ public class Mapa {
 		// ACA ES DONDE IMPORTA LA HEURISTICA
 		int dx = Math.abs(b.getX() - a.getX());
 		int dy = Math.abs(b.getY() - a.getY());
-		Double dist = (dx + dy) + ((Math.sqrt(2) - 2) * getMin(dx, dy));
-		return dist;
+		//Double dist = (dx + dy) + ((Math.sqrt(2) - 2) * getMin(dx, dy));
+		return (double) (dx + dy);
 	}
 
 	private double getMin(int a, int b) {

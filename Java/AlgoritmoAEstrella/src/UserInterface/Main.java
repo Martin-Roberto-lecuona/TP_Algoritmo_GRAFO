@@ -15,8 +15,8 @@ public class Main {
 		Mapa m = new Mapa(mapaMatrix);
 		m.printMapa();
 
-		Casilla orig = new Casilla(2, 0);
-		Casilla dest = new Casilla(1,3);
+		Casilla orig = new Casilla(1, 0);
+		Casilla dest = new Casilla(2,3);
 		ArrayList<Casilla> camino = m.camino(orig, dest);
 		System.out.println("Camino: ");
 		m.printCamino(camino);
